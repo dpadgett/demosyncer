@@ -24,6 +24,4 @@ USER syncer
 ENV HOME /home/syncer
 ENV USER syncer
 
-VOLUME /home/syncer
-
 CMD /home/syncer/syncer.sh
