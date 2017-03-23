@@ -4,7 +4,7 @@ USER=${SITH_USER}
 PASS=${SITH_PASS}
 FTPURL="ftp://$USER:$PASS@$HOST"
 LCD="${NAS_DIR}/sith"
-CD="/185.16.85.137 port 29070/GameData/base/demos/autorecord"
+CD="/185.16.85.137_29070/GameData/base/demos/autorecord"
 #lftp -c "set ftp:timezone CET; set ftp:passive-mode off; set ftp:port-range 65000-65100; set net:timeout 5; set net:max-retries 2; set net:reconnect-interval-base 5; open '$FTPURL'; lcd '$LCD'; cd '$CD' && mirror --verbose"
 
 #lftp -c "set ftp:timezone CET; set net:timeout 15; set net:max-retries 2; set net:reconnect-interval-base 5; open '$FTPURL'; lcd '$LCD'; cd '$CD' && mirror --verbose -P 8"
