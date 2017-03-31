@@ -11,4 +11,4 @@ CD="/home/${DEMON_USER}/GameData/base/demos/autorecord"
 
 # more efficient to rsync on remote file host, since it can more efficiently checksum existing files
 ssh -A ${NAS_USER}@${NAS_HOST} -p ${NAS_PORT} "lftp -c \"set ftp:timezone CET; set net:timeout 15; set net:max-retries 2; set net:reconnect-interval-base 5; open '$FTPURL'; lcd '$LCD'; cd '$CD' && mirror --verbose -P 8\"" \
- | tee -a /dev/stderr | grep "^Transferring file" | sed "s/Transferring file .\(.*\).$/\1/" | grep ".dm_2[5-6]$" | sed 's|^|/cygdrive/U/demos/sith/|' >> /tmp/demos.txt
+ | tee -a /dev/stderr | grep "^Transferring file" | sed "s/Transferring file .\(.*\).$/\1/" | grep ".dm_2[5-6]$" | sed 's|^|/cygdrive/U/demos/demon/|' >> /tmp/demos.txt
