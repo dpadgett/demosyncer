@@ -4,7 +4,7 @@ USER=${DEMON_USER}
 PASS=${DEMON_PASS}
 FTPURL="sftp://$USER:$PASS@$HOST"
 LCD="${NAS_DIR}/demon"
-CD="/GameData/base/demos/autorecord"
+CD="/home/${DEMON_USER}/GameData/base/demos/autorecord"
 #lftp -c "set ftp:timezone CET; set ftp:passive-mode off; set ftp:port-range 65000-65100; set net:timeout 5; set net:max-retries 2; set net:reconnect-interval-base 5; open '$FTPURL'; lcd '$LCD'; cd '$CD' && mirror --verbose"
 
 #lftp -c "set ftp:timezone CET; set net:timeout 15; set net:max-retries 2; set net:reconnect-interval-base 5; open '$FTPURL'; lcd '$LCD'; cd '$CD' && mirror --verbose -P 8"
