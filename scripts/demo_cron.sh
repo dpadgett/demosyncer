@@ -14,5 +14,6 @@ if [ -s /tmp/demos.txt ]; then
   timeout 30m bash -c "curl http://pyservices:3031/exec.py?file=create_demo_metadata.py --data-binary @/tmp/demos.txt && echo create_demo_metadata done" | tee -a demo_first.log || echo "create_demo_metadata timed out" | tee -a demo_first.log
   timeout 10m bash -c "curl http://pyservices:3031/exec.py?file=create_users.py && echo create_users done" | tee -a demo_first.log || echo "create_users timed out" | tee -a demo_first.log
   timeout 10m bash -c "curl http://pyservices:3031/exec.py?file=calculate_ranks_v3.py && echo calculate_ranks_v3 done" | tee -a demo_first.log || echo "calculate_ranks_v3 timed out" | tee -a demo_first.log
+  timeout 20m bash -c "/home/syncer/demo_post_trigger.sh </tmp/demos.txt && echo demo_post_trigger done"
 fi
 echo "all done" | tee -a demo_first.log
