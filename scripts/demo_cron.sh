@@ -7,7 +7,6 @@ rm /tmp/demos.txt
 timeout 10m bash -c "/home/syncer/whoracle_sync.sh && echo whoracle_sync done" | tee -a demo_first.log || echo "whoracle_sync timed out" | tee -a demo_first.log
 timeout 10m bash -c "/home/syncer/refresh_sync.sh && echo refresh_sync done" | tee -a demo_first.log || echo "refresh_sync timed out" | tee -a demo_first.log
 timeout 10m bash -c "/home/syncer/sylar_sync.sh && echo sylar_sync done" | tee -a demo_first.log || echo "sylar_sync timed out" | tee -a demo_first.log
-timeout 10m bash -c "/home/syncer/sith_sync.sh && echo sith_sync done" | tee -a demo_first.log || echo "sith_sync timed out" | tee -a demo_first.log
 timeout 10m bash -c "/home/syncer/bra_sync.sh && echo bra_sync done" | tee -a demo_first.log || echo "bra_sync timed out" | tee -a demo_first.log
 timeout 10m bash -c "/home/syncer/demon_sync.sh && echo demon_sync done" | tee -a demo_first.log || echo "demon_sync timed out" | tee -a demo_first.log
 if [ -s /tmp/demos.txt ]; then
